@@ -5,6 +5,13 @@ local default_plugins = {
   "nvim-lua/plenary.nvim",
 
   {
+    "github/copilot.vim",
+    opts = {
+      lazy=false
+    }
+  },
+
+  {
     "NvChad/base46",
     branch = "v2.0",
     build = function()

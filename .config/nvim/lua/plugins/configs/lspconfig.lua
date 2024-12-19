@@ -61,7 +61,7 @@ require("lspconfig").lua_ls.setup {
   },
 }
 
-require("lspconfig").tsserver.setup{}
+require("lspconfig").ts_ls.setup{}
 require("lspconfig").clangd.setup{}
 
 return M

@@ -77,7 +77,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git sudo history encode64 copypath zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git sudo history encode64 copypath zsh-autosuggestions zsh-syntax-highlighting command-not-found debian docker emoji eza themes)
+# plugins=()
 
 source $ZSH/oh-my-zsh.sh
 
@@ -86,6 +87,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH=/home/linuxbrew/.linuxbrew/bin/brew:$PATH
 export PATH=/home/linuxbrew/.linuxbrew/bin/nvim:$PATH
 export PATH=$HOME/.local/bin:$PATH
+export PATH=$PATH:$HOME/.dotnet/tools
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -116,8 +118,14 @@ export PATH=$HOME/.local/bin:$PATH
 alias vi="nvim"
 alias tmux="tmux -u"
 alias ls="eza --color=always --no-filesize --icons=always --no-time --no-user"
+alias kubectl="minikube kubectl --"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+fpath+=${ZDOTDIR:-~}/.zsh_functions
