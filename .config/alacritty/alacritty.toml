@@ -1,6 +1,6 @@
-shell = "/usr/bin/zsh"
+terminal.shell = "/usr/bin/zsh"
 
-import = [
+general.import = [
     "~/.config/alacritty/themes/themes/hardhacker.toml"
 ]
 
